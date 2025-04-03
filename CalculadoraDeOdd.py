@@ -22,8 +22,8 @@ df = pd.read_csv(file_path, delimiter=";")
 df["Jogador"] = df["Jogador"].apply(lambda x: unicodedata.normalize('NFKD', x).encode('ascii', errors='ignore').decode('utf-8'))
 
 # Selecionar estatísticas relevantes
-estatisticas = ["PTS", "3P", "FGA", "FG%", "FT%", "AST", "TRB", "STL", "BLK", "PF","TOV"]
-mercados = {"PTS": "Pontos", "3P": "Cestas de 3", "AST": "Assistências", "TRB": "Rebotes", "STL": "Roubos", "BLK": "Tocos", "FGA": "Tentativas de Arremesso", "FG%": "Percentual de FG", "FT%": "Percentual de FT", "PF": "Faltas", "TOV": "Turnover"}
+estatisticas = ["PTS", "3P", "FGA", "AST", "TRB", "STL", "BLK", "PF","TOV"]
+mercados = {"PTS": "Pontos", "3P": "Cestas de 3", "AST": "Assistências", "TRB": "Rebotes", "STL": "Roubos", "BLK": "Tocos", "FGA": "Tentativas de Arremesso", "PF": "Faltas", "TOV": "Turnover"}
 
 def analisar_jogador(nome_jogador, linhas_aposta, odds_aposta):
     # Normalizar o nome do jogador para remover acentos
@@ -63,9 +63,9 @@ def analisar_jogador(nome_jogador, linhas_aposta, odds_aposta):
     return df_resultado
 
 # Exemplo de uso
-nome_jogador = "Jimmy Butler "
-linhas_aposta = {"PTS": 18.5, "3P": 0.5, "AST": 5.5, "TRB": 5.5, "FGA": 11.5,  "STL": 1.5, "BLK": 0.5, "PF": 1.5, "TOV": 1.5}
-odds_aposta = {"PTS": 1.86, "3P": 1.52, "AST": 1.66, "TRB": 1.83, "FGA": 1.8,  "STL": 2, "BLK": 4.5, "PF": 1.76, "TOV": 1.68}
+nome_jogador = "Ja Morant"
+linhas_aposta = {"PTS": 24.5, "3P": 1.5, "AST": 7.5, "TRB": 4.5, "FGA": 18.5,  "STL": 1.5, "BLK": 0.5, "PF": 1.5, "TOV": 3.5}
+odds_aposta = {"PTS": 1.876, "3P": 1.55, "AST": 1.9, "TRB": 1.8, "FGA": 1.8,  "STL": 2.2, "BLK": 4.3, "PF": 1.6, "TOV": 1.95}
 
 # Gerar DataFrame com os resultados
 df_resultado = analisar_jogador(nome_jogador, linhas_aposta, odds_aposta)
