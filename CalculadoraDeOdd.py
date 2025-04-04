@@ -63,9 +63,9 @@ def analisar_jogador(nome_jogador, linhas_aposta, odds_aposta):
     return df_resultado
 
 # Exemplo de uso
-nome_jogador = "Ja Morant"
-linhas_aposta = {"PTS": 24.5, "3P": 1.5, "AST": 7.5, "TRB": 4.5, "FGA": 18.5,  "STL": 1.5, "BLK": 0.5, "PF": 1.5, "TOV": 3.5}
-odds_aposta = {"PTS": 1.876, "3P": 1.55, "AST": 1.9, "TRB": 1.8, "FGA": 1.8,  "STL": 2.2, "BLK": 4.3, "PF": 1.6, "TOV": 1.95}
+nome_jogador = "Anthony Davis"
+linhas_aposta = {"PTS": 21.5, "3P": 0.5, "AST": 3.5, "TRB": 8.5, "FGA": 18.5,  "STL": 0.5, "BLK": 1.5, "PF": 2.5, "TOV": 2.5}
+odds_aposta = {"PTS": 1.86, "3P": 1.62, "AST": 2.15, "TRB": 1.68, "FGA": 1.86,  "STL": 1.52, "BLK": 2.05, "PF": 2.4, "TOV": 2.2}
 
 # Gerar DataFrame com os resultados
 df_resultado = analisar_jogador(nome_jogador, linhas_aposta, odds_aposta)
